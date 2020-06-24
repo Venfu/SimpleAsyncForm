@@ -4,10 +4,7 @@ header('Content-Type: application/json');
 
 $resp;
 
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "myDB";
+include "../security.php";
 
 $PATTERN_ALPHA = "/^[a-zàâçéèêëîïôûùüÿñæœ '.-]*$/i";
 $PATTERN_ALPHA_NUM = "/^[a-z0-9àâçéèêëîïôûùüÿñæœ ,'.-]*$/i";
@@ -53,7 +50,7 @@ if ($resp['Error']) {
     $sql_v .= "'" . $v . "', ";
   }
 
-  $sql = "INSERT INTO adherants (" . $sql_k . "date_inscription)
+  $sql = "INSERT INTO adherents (" . $sql_k . "date_inscription)
   VALUES (" . $sql_v . "CURRENT_TIMESTAMP)";
 
   if ($resp = mysqli_query($conn, $sql)) {
