@@ -71,7 +71,7 @@ if ($resp['Error']) {
   $to      = $_POST['email'];
   $subject = '[ASC94700] - Confirmation d\'inscription';
   $message = "Bonjour,\r\n
-  Inscription définitive à récéption du règlement ainsi que du certificat médical au bureau de l\'association\r\n
+  Inscription définitive à récéption du règlement ainsi que du certificat médical au bureau de l'association\r\n
   Merci de joindre le bulletin ci-dessous : \r\n
   " . $_POST['activite'] ."\r\n" .
   $_POST['nom'] ."\r\n" .
