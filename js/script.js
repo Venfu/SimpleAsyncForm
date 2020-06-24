@@ -10,7 +10,16 @@ $(document).ready(function () {
       url: url,
       data: form.serialize(), // serializes the form's elements.
       success: function (data) {
-        // form[0].reset();
+        if (data.Error) {
+          $.each(data.Error, function (index, value) {
+            $('*[name="' + index + '"]')
+              .parent()
+              .append("<strong>" + value + "</strong>");
+          });
+        } else if (data === "Success") {
+          form[0].reset();
+          alert("Vos données ont été enregistrées. Nous vous contacterons.")
+        }
       },
     });
   });

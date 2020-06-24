@@ -27,8 +27,8 @@ $validators['representant_legal'] = ["regex" => $PATTERN_ALPHA, "require" => fal
 
 // Check values
 foreach ($_POST as $k => $v) {
-  if ($validators[$k]["require"] && !$_POST[$k]) $resp['Error'][$k] = "Required";
-  if ($_POST[$k] && !preg_match($validators[$k]["regex"], $v)) $resp['Error'][$k] = "Invalid";
+  if ($validators[$k]["require"] && !$_POST[$k]) $resp['Error'][$k] = "Ce champs est requis";
+  if ($_POST[$k] && !preg_match($validators[$k]["regex"], $v)) $resp['Error'][$k] = "La valeur de ce champs n'est pas valide";
 }
 
 if ($resp['Error']) {
