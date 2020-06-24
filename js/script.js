@@ -14,7 +14,7 @@ $(document).ready(function () {
           $.each(data.Error, function (index, value) {
             $('*[name="' + index + '"]')
               .parent()
-              .append("<strong>" + value + "</strong>");
+              .append("<strong style=\"color:red\">" + value + "</strong>");
           });
         } else if (data === "Success") {
           form[0].reset();
