@@ -66,6 +66,23 @@ if ($resp['Error']) {
   }
 
   mysqli_close($conn);
+
+  // Send email
+  $to      = $_POST['email'];
+  $subject = '[ASC94700] - Confirmation d\'inscription';
+  $message = "Bonjour,\r\n
+  Inscription définitive à récéption du règlement ainsi que du certificat médical au bureau de l\'association\r\n
+  Merci de joindre le bulletin ci-dessous : \r\n
+  " . $_POST['activite'] ."\r\n" .
+  $_POST['nom'] ."\r\n" .
+  $_POST['prenom'] ."\r\n
+  Cordialement,\r\n
+  L'ASC de Maisons Alfort";
+  $headers = 'From: ' . $emailFrom  . "\r\n" .
+    'Reply-To: ' . $emailFrom  . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+  mail($to, $subject, $message, $headers);
 }
 
 echo json_encode($resp);
