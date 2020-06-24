@@ -51,9 +51,9 @@ if ($resp['Error']) {
   // Build sql request
   $sql_k = "";
   $sql_v = "";
-  foreach ($_POST as $k => $v) {
+  foreach ($validators as $k => $v) {
     $sql_k .= $k . ", ";
-    $sql_v .= "'" . $v . "', ";
+    $sql_v .= "'" . $_POST[$k] . "', ";
   }
 
   $sql = "INSERT INTO adherents (" . $sql_k . "date_inscription)
