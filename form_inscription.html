@@ -1,0 +1,133 @@
+<script src="https://asc94700.fr/core/vendor/jquery/jquery.min.js"></script>
+
+<form action="/api/postAdherants.php" id="formInscription" method="POST">
+
+  <div class="row">
+    <div class="col12">
+      <div class="inputWrapper">
+        <label for="activite">Activité</label>
+        <select name="activite" id="activite">
+          <option value="">Choisissez une activité</option>
+          <option value="">Choix</option>
+          <option value="">Choix</option>
+          <option value="">Choix</option>
+          <option value="">Choix</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col6">
+      <div class="inputWrapper">
+        <label for="nom">Votre nom</label>
+        <input type="text" name="nom" id="nom" placeholder="Nom" />
+      </div>
+    </div>
+    <div class="col6">
+      <div class="inputWrapper">
+        <label for="prenom">Votre Prénom</label>
+        <input type="text" name="prenom" id="prenom" placeholder="Prénom" />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col12">
+      <div class="inputWrapper">
+        <label for="email">Votre Email</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          placeholder="exemple@gmail.com"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col6">
+      <div class="inputWrapper">
+        <label for="date_naissance">Votre date de naissance</label>
+        <input
+          type="text"
+          name="date_naissance"
+          id="date_naissance"
+          placeholder="JJ/MM/AAAA"
+        />
+      </div>
+    </div>
+    <div class="col6">
+      <div class="inputWrapper">
+        <label for="telephone">Votre numéro de téléphone</label>
+        <input
+          type="text"
+          name="telephone"
+          id="telephone"
+          placeholder="0123456789"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col12">
+      <div class="inputWrapper">
+        <label for="code_postal">Votre adresse postale</label>
+        <input
+          type="text"
+          name="code_postal"
+          id="code_postal"
+          placeholder="99 rue exemple"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col6">
+      <div class="inputWrapper">
+        <label for="code_postal">Code postal</label>
+        <input
+          type="text"
+          name="code_postal"
+          id="code_postal"
+          placeholder="94700"
+        />
+      </div>
+    </div>
+    <div class="col6">
+      <div class="inputWrapper">
+        <label for="ville">Ville</label>
+        <input
+          type="text"
+          name="ville"
+          id="ville"
+          placeholder="Maisons Alfort"
+        />
+      </div>
+    </div>
+    <div class="col6">
+      <div class="inputWrapper">
+        <label for="pays">Pays</label>
+        <input type="text" name="pays" id="pays" placeholder="France" />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col6">
+      <div class="inputWrapper">
+        <label for="representant_legal">Représentant légal (Si mineur)</label>
+        <input
+          type="text"
+          name="representant_legal"
+          id="representant_legal"
+          placeholder="Nom Prénom"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col2 offset5">
+      <button type="submit">Valider</button>
+    </div>
+  </div>
+</form>
+
+<script src="/js/script.js"></script>
