@@ -9,6 +9,7 @@ include "../security.php";
 $PATTERN_ALPHA = "/^[a-zàâçéèêëîïôûùüÿñæœ '.-]*$/i";
 $PATTERN_ALPHA_NUM = "/^[a-z0-9àâçéèêëîïôûùüÿñæœ ,'.-]*$/i";
 $PATTERN_CP = "/^[0-9]{5}$/";
+$PATTERN_HEURE = "/^[0-9]{1,2}[:|h][0-9]{1,2}$/i";
 $PATTERN_TEL = "/^(0033|0|\+33)[1-9]([-. ]?[0-9]{2}){4}$/";
 $PATTERN_EMAIL = "/^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,3}$/i";
 $PATTERN_DATE = "/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/";
@@ -17,6 +18,7 @@ $PATTERN_CGU = "/accepted/";
 
 $validators['reinscription'] = ["regex" => $PATTERN_OUINON, "require" => true];
 $validators['activite'] = ["regex" => $PATTERN_ALPHA_NUM, "require" => true];
+$validators['heure_desiree'] = ["regex" => $PATTERN_HEURE, "require" => false];
 $validators['nom'] = ["regex" => $PATTERN_ALPHA, "require" => true];
 $validators['prenom'] = ["regex" => $PATTERN_ALPHA, "require" => true];
 $validators['profession'] = ["regex" => $PATTERN_ALPHA, "require" => false];

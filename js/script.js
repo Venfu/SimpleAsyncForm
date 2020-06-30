@@ -1,4 +1,15 @@
 $(document).ready(function () {
+  $('#activite').on("change", function(e) {
+    var heureRequired = ["Yoga et Yoga Senior", "Aquagym", "Gym Douce", "Arts plastiques", "Batterie et percussion", "Guitare et basse", "Piano", "Saxophone"];
+    $("#divHeure").empty();
+    console.log(heureRequired);
+    console.log(e.target.value);
+    console.log(heureRequired.indexOf(e.target.value));
+    if (heureRequired.indexOf(e.target.value) != -1) {
+      $("#divHeure").append('<div class="col12"><div class="inputWrapper"><label for="heure_desiree">Heure désirée</label><input type="text" name="heure_desiree" id="heure_desiree" placeholder="12:30" /></div><p>Pour savoir les heures disponible, rendez-vous dans la rubrique de l\'activité</p></div>');
+    }
+  });
+
   $("#formInscription").submit(function (e) {
     e.preventDefault();
 
