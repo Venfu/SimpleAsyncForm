@@ -31,6 +31,23 @@ $validators['representant_legal'] = ["regex" => $PATTERN_ALPHA, "require" => fal
 $validators['contact_urgence'] = ["regex" => $PATTERN_ALPHA_NUM, "require" => false];
 $validators['cgu'] = ["regex" => $PATTERN_CGU, "require" => true];
 
+$array_certif = [
+  "Aïkido",
+  "Aïki Taïso",
+  "Kenjutsu",
+  "Karaté",
+  "Body Karaté",
+  "Self défense",
+  "Taichi",
+  "Yoga et Yoga Senior",
+  "Gym Douce",
+  "Body strech",
+  "Aquagym",
+  "Marche Nordique",
+];
+
+$certificat = (in_array($_POST["activite"], $array_certif)) ? true : false;
+
 // Check values
 foreach ($validators as $k => $v) {
   if ($v["require"] && !$_POST[$k]) $resp['Error'][$k] = "Ce champs est requis";
@@ -71,11 +88,13 @@ if ($resp['Error']) {
   $to      = $_POST['email'];
   $subject = '[ASC94700] - Confirmation d\'inscription';
   $message = "Bonjour,\r\n
-  Inscription définitive à récéption du règlement ainsi que du certificat médical au bureau de l'association\r\n
+  Inscription définitive à récéption du règlement ";
+  $message .= ($certificat) ? "ainsi que du certificat médical" : "";
+  $message .= " au bureau de l'association\r\n
   Merci de joindre le bulletin ci-dessous : \r\n
-  " . $_POST['activite'] ."\r\n" .
-  $_POST['nom'] ."\r\n" .
-  $_POST['prenom'] ."\r\n
+  " . $_POST['activite'] . "\r\n" .
+    $_POST['nom'] . "\r\n" .
+    $_POST['prenom'] . "\r\n
   Cordialement,\r\n
   L'ASC de Maisons Alfort";
   $headers = 'From: ' . $emailFrom  . "\r\n" .
