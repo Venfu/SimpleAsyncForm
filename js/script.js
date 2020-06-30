@@ -5,12 +5,12 @@ $(document).ready(function () {
     $("#divHeure").empty();
     if (heureRequired.indexOf(e.target.value) != -1) {
       $("#divHeure").append(
-        '<div class="col12"><div class="inputWrapper"><label for="heure_desiree">Heure désirée</label><input type="text" name="heure_desiree" id="heure_desiree" placeholder="12:30" /></div><p>Pour savoir les heures disponible, rendez-vous dans la rubrique de l\'activité.</p></div>'
+        '<div class="col12"><div class="inputWrapper"><label for="heure_desiree">Heure désirée</label><input type="text" name="heure_desiree" id="heure_desiree" placeholder="12:30" /></div><p style="color: #FF8C00">Pour savoir les heures disponible, rendez-vous dans la rubrique de l\'activité.</p></div>'
       );
     }
     if (certifRequired.indexOf(e.target.value) != -1) {
       $("#divHeure").append(
-        '<div class="col12"><p>Un certificat médical vous sera demandé lors du paiement.</p></div>'
+        '<div class="col12"><p style="color: #FF8C00">Un certificat médical vous sera demandé lors du paiement.</p></div>'
       );
     }
   });
