@@ -6,3 +6,4 @@ $password = "password";
 $dbname = "dbname";
 
 $emailFrom = "contact@exemple.fr";
+$emailBcc = "bcc@mail.com";
