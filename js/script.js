@@ -35,7 +35,7 @@ $(document).ready(function () {
           });
         } else if (data === "Success") {
           form[0].reset();
-          alert("Vos données ont été enregistrées. Nous vous contacterons.");
+          alert("Votre pré-inscription est terminée. Surveillez votre boîte mail pour la finaliser. (Verifiez vos spams)");
         }
       },
     });
