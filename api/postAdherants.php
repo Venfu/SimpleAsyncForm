@@ -88,19 +88,21 @@ if ($resp['Error']) {
 
   mysqli_close($conn);
 
-  // Send email
-  $to      = $_POST['email'];
-
-  include('../mail.php');
-
-  $headers = 'From: ' . $emailFrom  . "\r\n" .
-    'Reply-To: ' . $emailFrom  . "\r\n" .
-    'X-Mailer: PHP/' . phpversion() . "\r\n" .
-    'MIME-Version: 1.0' . "\r\n" .
-    'Content-type: text/html; charset=iso-8859-1' . "\r\n" .
-    'Bcc: ' . $emailBcc;
-
-  mail($to, $subject, $message, $headers);
+  if ($resp == "Success") {
+    // Send email
+    $to      = $_POST['email'];
+  
+    include('../mail.php');
+  
+    $headers = 'From: ' . $emailFrom  . "\r\n" .
+      'Reply-To: ' . $emailFrom  . "\r\n" .
+      'X-Mailer: PHP/' . phpversion() . "\r\n" .
+      'MIME-Version: 1.0' . "\r\n" .
+      'Content-type: text/html; charset=utf8' . "\r\n" .
+      'Bcc: ' . $emailBcc;
+  
+    mail($to, $subject, $message, $headers);
+  }
 }
 
 echo json_encode($resp);
