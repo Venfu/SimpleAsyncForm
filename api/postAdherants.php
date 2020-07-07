@@ -74,7 +74,7 @@ if ($resp['Error']) {
   $sql_v = "";
   foreach ($validators as $k => $v) {
     $sql_k .= $k . ", ";
-    $sql_v .= "'" . $_POST[$k] . "', ";
+    $sql_v .= "'" . utf8_decode($_POST[$k]) . "', ";
   }
 
   $sql = "INSERT INTO adherents (" . $sql_k . "date_inscription)
