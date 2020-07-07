@@ -9,10 +9,39 @@ $(document).ready(function () {
       );
     }
     if (certifRequired.indexOf(e.target.value) != -1) {
-      $("#divHeure").append(
-        '<div class="col12"><p style="color: #FF8C00">Un certificat médical vous sera demandé lors du paiement.</p></div>'
-      );
+      $("#divHeure").append('<div class="col12"><p style="color: #FF8C00">Un certificat médical vous sera demandé lors du paiement.</p></div>');
     }
+  });
+
+  $("#date_naissance").bind("keyup", "keydown", function (event) {
+    var inputLength = event.target.value.length;
+    if (inputLength === 2 || inputLength === 5) {
+      var thisVal = event.target.value;
+      thisVal += "/";
+      $(event.target).val(thisVal);
+    }
+  });
+
+  // Restricts input for the given textbox to the given inputFilter function.
+  function setInputFilter(textbox, inputFilter) {
+    ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
+      textbox.addEventListener(event, function () {
+        if (inputFilter(this.value)) {
+          this.oldValue = this.value;
+          this.oldSelectionStart = this.selectionStart;
+          this.oldSelectionEnd = this.selectionEnd;
+        } else if (this.hasOwnProperty("oldValue")) {
+          this.value = this.oldValue;
+          this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+        } else {
+          this.value = "";
+        }
+      });
+    });
+  }
+
+  setInputFilter(document.getElementById("date_naissance"), function(value) {
+    return /^\d{0,2}\/?\d{0,2}\/?\d{0,4}$/.test(value);
   });
 
   $("#formInscription").submit(function (e) {
