@@ -2,14 +2,14 @@ $(document).ready(function () {
   $("#activite").on("change", function (e) {
     var heureRequired = ["Yoga et Yoga Senior", "Aquagym", "Gym Douce", "Arts plastiques", "Batterie et percussion", "Guitare et basse", "Piano", "Saxophone"];
     var certifRequired = ["Aïkido", "Aïki Taïso", "Kenjutsu", "Karaté", "Body Karaté", "Self défense", "Taichi", "Yoga et Yoga Senior", "Gym Douce", "Body strech", "Aquagym", "Marche Nordique"];
-    $("#divHeure").empty();
+    $("#divSeace").empty();
     if (heureRequired.indexOf(e.target.value) != -1) {
-      $("#divHeure").append(
-        '<div class="col12"><div class="inputWrapper"><label for="heure_desiree">Heure désirée</label><input type="text" name="heure_desiree" id="heure_desiree" placeholder="12:30" /></div><p style="color: #FF8C00">Pour savoir les heures disponible, rendez-vous dans la rubrique de l\'activité.</p></div>'
+      $("#divSeace").append(
+        '<div class="col12"><div class="inputWrapper"><label for="seance_desiree">Heure désirée</label><input type="text" name="seance_desiree" id="seance_desiree" placeholder="Ex : lundi 12:30" /></div><p style="color: #FF8C00">Pour savoir les heures disponible, rendez-vous dans la rubrique de l\'activité.</p></div>'
       );
     }
     if (certifRequired.indexOf(e.target.value) != -1) {
-      $("#divHeure").append('<div class="col12"><p style="color: #FF8C00">Un certificat médical vous sera demandé lors du paiement.</p></div>');
+      $("#divSeace").append('<div class="col12"><p style="color: #FF8C00">Un certificat médical vous sera demandé lors du paiement.</p></div>');
     }
   });
 
