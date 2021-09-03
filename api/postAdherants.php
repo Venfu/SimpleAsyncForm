@@ -33,6 +33,7 @@ $validators['ville'] = ["regex" => $PATTERN_ALPHA, "require" => true];
 $validators['pays'] = ["regex" => $PATTERN_ALPHA, "require" => true];
 $validators['representant_legal'] = ["regex" => $PATTERN_ALPHA, "require" => false];
 $validators['contact_urgence'] = ["regex" => $PATTERN_ALPHA_NUM, "require" => false];
+$validators['pass_sanitaire'] = ["regex" => $PATTERN_OUINON, "require" => false];
 $validators['cgu'] = ["regex" => $PATTERN_CGU, "require" => true];
 
 $array_certif = [
