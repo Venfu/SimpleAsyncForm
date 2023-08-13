@@ -22,9 +22,11 @@
           <option value="Aïkido">Aïkido</option>
           <option value="Aïki Taïso">Aïki Taïso</option>
           <option value="Kenjutsu">Kenjutsu</option>
+          <option value="Baby Karaté">Baby Karaté</option>
           <option value="Karaté">Karaté</option>
           <option value="Body Karaté">Body Karaté</option>
           <option value="Self défense">Self défense</option>
+          <option value="Circuit Training">Circuit Training</option>
           <option value="Taichi">Taichi</option>
           <option value="Yoga et Yoga Senior">Yoga et Yoga Senior</option>
           <option value="Gym Douce">Gym Douce</option>
@@ -139,7 +141,8 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <!-- Passe sanitaire en display none car désactivé pour le moment -->
+  <div class="row" style="display:none">
     <div class="col12">
       <div class="inputWrapper">
         Passe Sanitaire valide (facultatif) :
@@ -147,6 +150,23 @@
         <label for="passSanitaireOui">Oui</label>
         <input type="radio" name="pass_sanitaire" value="Non" id="passSanitaireNon" />
         <label for="passSanitaireNon">Non</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col12">
+      <div class="inputWrapper">
+        <h3>Droit à l'image<strong style="color: red">*</strong></h3>
+        J'autorise, expressément l'ASC, à titre gracieux et à des fins non commerciales, en tant qu’adhérent, pour moi-même ou pour mon enfant dont j’atteste être le représentant légal, à :
+        <ul>
+          <li>réaliser ou à faire réaliser des prises de vues (photos ou vidéos) me représentant ;</li>
+          <li>reproduire et représenter mon image telle qu'enregistrée lors des prises de vues ;</li>
+          <li>utiliser ces prises de vue sur tout support de communication et quelque que soit le mode de diffusion.</li>
+        </ul>
+        <input type="radio" name="droit_image" value="Oui" id="droitImageOui" />
+        <label for="droitImageOui">Oui</label>
+        <input type="radio" name="droit_image" value="Non" id="droitImageNon" />
+        <label for="droitImageNon">Non</label>
       </div>
     </div>
   </div>

@@ -34,6 +34,7 @@ $validators['pays'] = ["regex" => $PATTERN_ALPHA, "require" => true];
 $validators['representant_legal'] = ["regex" => $PATTERN_ALPHA, "require" => false];
 $validators['contact_urgence'] = ["regex" => $PATTERN_ALPHA_NUM, "require" => false];
 $validators['pass_sanitaire'] = ["regex" => $PATTERN_OUINON, "require" => false];
+$validators['droit_image'] = ["regex" => $PATTERN_OUINON, "require" => true];
 $validators['cgu'] = ["regex" => $PATTERN_CGU, "require" => true];
 
 $array_certif = [
@@ -49,6 +50,8 @@ $array_certif = [
   "Body strech",
   "Aquagym",
   "Marche Nordique",
+  "Circuit Training",
+  "Baby Karaté",
 ];
 
 $certificat = (in_array($_POST["activite"], $array_certif)) ? true : false;

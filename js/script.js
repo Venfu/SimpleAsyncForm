@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $("#activite").on("change", function (e) {
     var heureRequired = ["Yoga et Yoga Senior", "Aquagym", "Gym Douce", "Arts plastiques", "Batterie et percussion", "Guitare et basse", "Piano", "Saxophone"];
-    var certifRequired = ["Aïkido", "Aïki Taïso", "Kenjutsu", "Karaté", "Body Karaté", "Self défense", "Taichi", "Yoga et Yoga Senior", "Gym Douce", "Body strech", "Aquagym", "Marche Nordique"];
+    var certifRequired = ["Aïkido", "Aïki Taïso", "Kenjutsu", "Karaté", "Body Karaté", "Self défense", "Taichi", "Yoga et Yoga Senior", "Gym Douce", "Body strech", "Aquagym", "Marche Nordique", "Circuit Training", "Baby Karaté"];
     $("#divSeace").empty();
     if (heureRequired.indexOf(e.target.value) != -1) {
       $("#divSeace").append(
@@ -40,7 +40,7 @@ $(document).ready(function () {
     });
   }
 
-  setInputFilter(document.getElementById("date_naissance"), function(value) {
+  setInputFilter(document.getElementById("date_naissance"), function (value) {
     return /^\d{0,2}\/?\d{0,2}\/?\d{0,4}$/.test(value);
   });
 
